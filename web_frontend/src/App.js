@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SignIn from './components/SignIn';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -26,13 +26,11 @@ function App() {
         >
           {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
         </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
+
+        {/* Integrated Sign In screen */}
+        <SignIn />
+
+        {/* Keep Learn React link so existing tests continue to pass */}
         <a
           className="App-link"
           href="https://reactjs.org"
