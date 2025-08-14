@@ -1,0 +1,446 @@
+/* Fonts (Poppins primary, Inter as secondary) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap');
+
+/* 
+  Scoped styles for SignIn component.
+  This file merges the important parts of assets/common.css and assets/sign-in.css,
+  but scopes them under the .signin-root wrapper to avoid leaking global styles.
+*/
+
+.signin-root {
+  /* Color tokens (from design_system JSON) */
+  --color-ffffff: #ffffff;
+  --color-292929: #292929;
+  --color-000000: #000000;
+  --color-e9fffa: #e9fffa;
+  --color-979797: #979797;
+  --color-fff2af: #fff2af;
+  --color-129575: #129575;
+  --color-dadada: #dadada;
+  --color-4cd964: #4cd964;
+  --color-121212: #121212;
+  --color-ff9c00: #ff9c00;
+  --color-ffc107: #ffc107;
+  --color-ff3d00: #ff3d00;
+  --color-4caf50: #4caf50;
+  --color-1976d2: #1976d2;
+  --color-035b81: #035b81;
+  --color-d9d9d9: #d9d9d9;
+  --color-484848: #484848;
+  --color-303030: #303030;
+  --color-a9a9a9: #a9a9a9;
+  --color-ffa61a: #ffa61a;
+  --color-ffce80: #ffce80;
+  --color-71b1a1: #71b1a1;
+  --color-130f26: #130f26;
+  --color-c1c1c1: #c1c1c1;
+  --color-ffe1b3: #ffe1b3;
+  --color-ffad30: #ffad30;
+  --color-dbebe7: #dbebe7;
+  --color-898989: #898989;
+  --color-292d32: #292d32;
+  --color-181818: #181818;
+  --color-c4c4c4: #c4c4c4;
+  --color-797979: #797979;
+  --color-808a96: #808a96;
+  --color-ceecd7: #ceecd7;
+  --color-31b057: #31b057;
+  --color-ffe1e7: #ffe1e7;
+  --color-fd3654: #fd3654;
+  --color-ffba4d: #ffba4d;
+  --color-d8d8d8: #d8d8d8;
+  --color-f6faf9: #f6faf9;
+  --color-afd3ca: #afd3ca;
+  --color-f4f4f4: #f4f4f4;
+  --color-9747ff: #9747ff;
+  --color-828282: #828282;
+
+  /* Shadow tokens */
+  --shadow-0: 0 0 5px 3px #696969; /* shadow_0 */
+
+  /* Radii */
+  --radius-10: 10px;
+  --radius-30: 30px;
+  --radius-100: 100px;
+
+  /* Sizing tokens (commonly used in this screen) */
+  --screen-width: 375px;
+  --screen-height: 812px;
+  --input-height: 55px;
+  --btn-height: 60px;
+
+  /* Font families (fallbacks included) */
+  --font-poppins: "Poppins", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sf-pro: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Z-index layering */
+  --z-content: 1;
+  --z-statusbar: 2;
+  --z-overlay: 3;
+
+  /* Local base styling */
+  position: relative;
+  font-family: var(--font-poppins);
+  color: var(--color-000000);
+  background: transparent;
+}
+
+/* Local reset (scoped) */
+.signin-root *,
+.signin-root *::before,
+.signin-root *::after {
+  box-sizing: border-box;
+}
+
+/* Screen container */
+.signin-root .screen {
+  width: var(--screen-width);
+  height: var(--screen-height);
+  background: var(--color-ffffff);
+  border-radius: var(--radius-30);
+  position: relative;
+  margin: 24px auto; /* center on page */
+  overflow: hidden;
+}
+
+/* Typography utilities used in this screen (from typography_ref) */
+.signin-root .typo-60 { /* Poppins 30/45 600 left, color #000000 */
+  font-family: var(--font-poppins);
+  font-size: 30px;
+  line-height: 45px;
+  font-weight: 600;
+  color: var(--color-000000);
+  text-align: left;
+}
+
+.signin-root .typo-61 { /* Poppins 20/30 400 left, color #121212 */
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  color: var(--color-121212);
+  text-align: left;
+}
+
+.signin-root .typo-62 { /* Poppins 11/16.5 400 center, color #ff9c00 */
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  line-height: 16.5px;
+  font-weight: 400;
+  color: var(--color-ff9c00);
+  text-align: center;
+}
+
+.signin-root .typo-63 { /* Poppins 11/16.5 500 left, color #000000 */
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  line-height: 16.5px;
+  font-weight: 500;
+  color: var(--color-000000);
+  text-align: left;
+}
+
+.signin-root .typo-64 { /* Poppins 11/16.5 500 left, color #d9d9d9 */
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  line-height: 16.5px;
+  font-weight: 500;
+  color: var(--color-d9d9d9);
+  text-align: left;
+}
+
+.signin-root .typo-65 { /* Poppins 11/16.5 400 left, color #d9d9d9 */
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  line-height: 16.5px;
+  font-weight: 400;
+  color: var(--color-d9d9d9);
+  text-align: left;
+}
+
+.signin-root .typo-66 { /* Poppins 14/21 400 left, color #121212 */
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: var(--color-121212);
+  text-align: left;
+}
+
+.signin-root .typo-58 { /* Poppins 16/24 600 center, color #ffffff */
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--color-ffffff);
+  text-align: center;
+}
+
+/* Inputs and buttons (tokens applied) */
+.signin-root .input-shell {
+  width: 315px;
+  height: var(--input-height);
+  border: 1.5px solid var(--color-d9d9d9); /* style_30 */
+  border-radius: var(--radius-10);
+  background: var(--color-ffffff);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.signin-root .input-shell input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color-121212);
+  background: transparent;
+}
+
+.signin-root .input-shell input::placeholder {
+  font-family: var(--font-poppins);
+  font-size: 11px; /* typo_65 */
+  line-height: 16.5px;
+  color: var(--color-d9d9d9);
+}
+
+.signin-root .label {
+  position: absolute;
+}
+
+/* Primary Button */
+.signin-root .btn-primary {
+  width: 315px;
+  height: var(--btn-height);
+  background: var(--color-129575); /* style_11 */
+  color: var(--color-ffffff);
+  border: none;
+  border-radius: var(--radius-10);
+  position: absolute;
+  cursor: pointer;
+}
+
+.signin-root .btn-primary .btn-label {
+  position: absolute;
+}
+
+.signin-root .btn-primary .btn-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+/* Social buttons (style_126) */
+.signin-root .social-btn {
+  width: 44px;
+  height: 44px;
+  background: var(--color-ffffff);
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-0);
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  cursor: pointer;
+}
+
+.signin-root .social-btn img,
+.signin-root .social-btn svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Divider lines (style_28) */
+.signin-root .divider-line {
+  height: 0;
+  border: none;
+  border-top: 1px solid var(--color-d9d9d9);
+  width: 50px;
+  position: absolute;
+}
+
+/* Links */
+.signin-root .link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Status bar and home indicator basics (light mode) */
+.signin-root .status-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--screen-width);
+  height: 44px;
+  pointer-events: none;
+}
+
+.signin-root .status-time {
+  position: absolute;
+  top: 12px;
+  left: 29.5px; /* Align close to Figma */
+  font-family: var(--font-sf-pro);
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #303030; /* typo_67 color */
+}
+
+.signin-root .home-indicator {
+  position: absolute;
+  width: var(--screen-width);
+  height: 34px;
+  left: 0;
+}
+
+.signin-root .home-indicator .bar {
+  position: absolute;
+  width: 135px;
+  height: 5px;
+  background: var(--color-121212); /* style_32 */
+  border-radius: var(--radius-100);
+  left: calc((var(--screen-width) - 135px) / 2);
+  top: 20px;
+}
+
+/* Screen: Sign In background */
+.signin-root .screen.sign-in {
+  background: var(--color-ffffff);
+}
+
+/* Title Group position */
+.signin-root #title-hello {
+  position: absolute;
+  left: 30px;
+  top: 94px;
+  width: 84px;
+  height: 45px;
+}
+
+.signin-root #title-welcome {
+  position: absolute;
+  left: 30px;
+  top: 139px;
+  width: 155px;
+  height: 30px;
+}
+
+/* Email input positions */
+.signin-root #label-email {
+  left: 30px;
+  top: 226px;
+  width: 38px;
+  height: 21px;
+}
+
+.signin-root #email-shell {
+  left: 30px;
+  top: 252px;
+}
+
+/* Password input positions */
+.signin-root #label-password {
+  left: 30px;
+  top: 337px;
+  width: 107px;
+  height: 21px;
+}
+
+.signin-root #password-shell {
+  left: 30px;
+  top: 363px;
+}
+
+/* Forgot Password */
+.signin-root #forgot-password {
+  position: absolute;
+  left: 40px;
+  top: 438px;
+  width: 97px;
+  height: 17px;
+  cursor: pointer;
+}
+
+/* Big Button position */
+.signin-root #sign-in-btn {
+  left: 30px;
+  top: 480px;
+  width: 315px;
+  height: 60px;
+}
+
+.signin-root #sign-in-btn .btn-label {
+  left: 115px;
+  top: 18px;
+  width: 114px;
+  height: 24px;
+}
+
+.signin-root #sign-in-btn .btn-icon {
+  left: 240px;
+  top: 10px;
+}
+
+/* Divider group */
+.signin-root #divider {
+  position: absolute;
+  left: 90px;
+  top: 560px;
+  width: 195px;
+  height: 17px;
+}
+
+.signin-root #divider .line-left {
+  left: 0px;
+  top: 8px; /* visually center the 1px line within 17px height */
+}
+
+.signin-root #divider .line-right {
+  left: 145px;
+  top: 8px;
+}
+
+.signin-root #divider .label {
+  position: absolute;
+  left: 57px;
+  top: 0px;
+  width: 81px;
+  height: 17px;
+}
+
+/* Social buttons positions */
+.signin-root #btn-google {
+  left: 131px;
+  top: 597px;
+}
+
+.signin-root #btn-facebook {
+  left: 200px;
+  top: 597px;
+}
+
+/* Bottom prompt position */
+.signin-root #signup-prompt {
+  position: absolute;
+  left: 99px;
+  top: 696px;
+  width: 177px;
+  height: 17px;
+}
+
+/* Status Bar fine-tune */
+.signin-root .status-bar {
+  top: 0;
+}
+
+/* Home Indicator position */
+.signin-root #home-indicator {
+  top: 778px;
+}
